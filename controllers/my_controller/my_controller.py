@@ -1,4 +1,5 @@
 from controller import Robot, Keyboard
+import random
 
 robot = Robot()
 timestep = int(robot.getBasicTimeStep())
@@ -20,42 +21,61 @@ while robot.step(timestep) != -1:
     
     left_speed = 0.0
     right_speed = 0.0
-    
+
+    bias = random.uniform(-maxSpeed * 0.1, maxSpeed * 0.1)
     key = keyboard.getKey()
+
+    if key == ord('W') or key == ord('w'):
+        # adelante
+        speed = maxSpeed + bias
+        left_speed = speed
+        right_speed = speed
+
+    elif key == ord('S') or key == ord('s'):
+        # atras
+        speed = -maxSpeed + bias
+        left_speed = speed
+        right_speed = speed
+
+    elif key == ord('A') or key == ord('a'):
+        # giro izquierda
+        left_speed = (maxSpeed / 4) + bias
+        right_speed = maxSpeed - bias
+
+    elif key == ord('D') or key == ord('d'):
+        # giro derecha
+        left_speed = maxSpeed + bias
+        right_speed = (maxSpeed / 4) - bias
+
+    elif key == ord('Q') or key == ord('q'):
+        # giro en lugar a izquierda
+        speed = (maxSpeed / 2) + bias
+        left_speed = -speed
+        right_speed = speed
+
+    elif key == ord('E') or key == ord('e'):
+        # giro en lugar a derecha
+        speed = (maxSpeed / 2) + bias
+        left_speed = speed
+        right_speed = -speed
+
+    else:
+        # no mover
+        left_speed = 0.0
+        right_speed = 0.0
     
-    while key != -1:
-        # Avanzar / Retroceder
-        if key == ord('W') or key == ord('w'):
-            left_speed += maxSpeed
-            right_speed += maxSpeed
-        elif key == ord('S') or key == ord('s'):
-            left_speed -= maxSpeed
-            right_speed -= maxSpeed
-            
-        # Girar Izquierda / Derecha y diagonal
-        elif key == ord('A') or key == ord('a'):
-            left_speed -= maxSpeed / 4
-            right_speed += maxSpeed / 4
-        elif key == ord('D') or key == ord('d'):
-            left_speed += maxSpeed / 4
-            right_speed -= maxSpeed / 4
-            
-        key = keyboard.getKey()
-     
-    if (left_speed > maxSpeed):
-        left_speed = maxSpeed
-    elif (right_speed > maxSpeed):
-        right_speed = maxSpeed
-        
+    # evitar errores
+    left_speed = max(-maxSpeed, min(left_speed, maxSpeed))
+    right_speed = max(-maxSpeed, min(right_speed, maxSpeed))
+
+    # aplicar velocidad
     left_motor.setVelocity(left_speed)
     right_motor.setVelocity(right_speed)
     
-    linear_velocity = (left_motor.getVelocity() + right_motor.getVelocity()) / 2
-    angular_velocity = (right_motor.getVelocity() - left_motor.getVelocity())/ 0.071
-    
-    if (linear_velocity == 0.0 and angular_velocity == 0.0):
-        pass
-    else:
-        print(f"Velocidad rueda izq: {left_speed} || Velocidad rueda der: {right_speed}")
-        print(f"Velocidad linear: {linear_velocity} m/s || Velocidad angular: {angular_velocity} r/s")
- 
+    # velocidad linear y angular plus prints
+    linear_velocity = (left_speed + right_speed) / 2
+    angular_velocity = (right_speed - left_speed) / 0.071
+
+    if linear_velocity != 0.0 or angular_velocity != 0.0:
+        print(f"Velocidad rueda izq: {left_speed:.2f} - Velocidad rueda der: {right_speed:.2f}")
+        print(f"Velocidad lineal: {linear_velocity:.2f} - Velocidad angular: {angular_velocity:.2f}")

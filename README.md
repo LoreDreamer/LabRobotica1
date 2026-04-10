@@ -1,4 +1,3 @@
-[ReadMe.md](https://github.com/user-attachments/files/26629050/ReadMe.md)
 # Laboratorio 1 — Simulación de un Robot Móvil Diferencial en Webots
 
 **Robótica y Sistemas Autónomos — ICI 4150-1**

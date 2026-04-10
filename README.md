@@ -42,18 +42,18 @@ Esto permite que el robot se traslade hacia adelante, retroceda, gire suavemente
 A continuación se presentan los resultados obtenidos durante la ejecución del controlador. Cada subsección incluye un video demostrativo acompañado de una breve descripción del comportamiento observado
 
 ### Movimiento en línea recta
-> *Inserte videoooo.*
+> https://github.com/user-attachments/assets/10d96754-e5f9-4f89-af2a-587dbe389bfb
 
 En este experimento, el robot e-puck se desplaza en línea recta manteniendo ambas ruedas con la misma velocidad angular. El movimiento es estable y simétrico, sin desviaciones laterales, lo que demuestra que el modelo de control permite generar un desplazamiento lineal uniforme y preciso.
 
 
 ### Movimiento en curva
-> *Inserte videoooo.* 
+> https://github.com/user-attachments/assets/d2054e52-153c-4a10-bea2-1ce381865f4d
 
 El robot ejecuta una trayectoria curva modificando la relación de velocidades entre la rueda izquierda y la derecha. Se observa cómo el e-puck genera una curva suave y continua, validando la correcta implementación del modelo cinemático para trayectorias no lineales.
 
 ### Movimiento circular
-> *Inserte videoooo.*
+> https://github.com/user-attachments/assets/452e1c00-0b45-49fb-8ebb-e531f510b528
 
 En este caso, el robot realiza un movimiento circular aplicando una diferencia constante entre las velocidades de ambas ruedas. La trayectoria describe un arco cerrado y uniforme, evidenciando la capacidad del controlador para generar curvas de radio constante, característica del movimiento circular.
 

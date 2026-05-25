@@ -6,5 +6,6 @@ maximizedDockId: -1
 centralWidgetVisible: 1
 orthographicViewHeight: 1
 textFiles: 0 "controllers/controllerKalman/controllerKalman.py" "protos/E-puck.proto"
+globalOptionalRendering: DistanceSensorRays::AllBoundingObjects
 consoles: Console:All:All
 renderingDevicePerspectives: e-puck:camera;1;1;0;0

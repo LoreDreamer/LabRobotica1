@@ -1,0 +1,56 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/solids/protos/SolidBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/plants/protos/FlowerPot.proto"
+
+WorldInfo {
+  info [
+    ""
+  ]
+}
+Viewpoint {
+  orientation -0.007469007281789749 -0.9999575533812449 0.0053949389263699635 4.764860177612459
+  position -0.2754498841642552 -0.16508130807179644 1.9506178984019225
+}
+SolidBox {
+  translation -0.25 0.26 0.05
+  name "box(4)"
+  size 0.1 0.07 0.1
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 0.2 0.2
+}
+FlowerPot {
+}
+SolidBox {
+  translation 0.25 0.26 0.05
+  name "box(5)"
+  size 0.1 0.07 0.1
+}
+SolidBox {
+  translation -0.25 -0.26 0.05
+  name "box(2)"
+  size 0.1 0.07 0.1
+}
+SolidBox {
+  translation 0.25 -0.26 0.05
+  name "box(3)"
+  size 0.1 0.07 0.1
+}
+E-puck {
+  hidden position_0_0 48.36320105510127
+  hidden position_0_1 43.56667999304328
+  hidden rotation_1 0 -0.9999999999999999 0 1.9022814023354204
+  hidden rotation_2 0 1 0 5.867568149965761
+  translation 0 0.3 -6.39532e-05
+  rotation 0.0004712559083618031 0.000476042430548639 -0.9999997756507113 1.5606890241596012
+  controller "controller_lab2"
+}

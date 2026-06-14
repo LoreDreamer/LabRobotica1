@@ -1,0 +1,56 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/factory/containers/protos/WoodenBox.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/BeerBottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/animals/protos/Cat.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation 0.5764920583613203 -0.5797789430855975 -0.5757719025802452 4.19134003121586
+  position 0.0036359498874794505 -0.06476125388471778 2.474427283496172
+}
+E-puck {
+  translation -0.45 -0.45 0
+  controller "my_fefe_controller"
+  controllerArgs [
+    ""
+  ]
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 0.2 0.2
+}
+WoodenBox {
+  translation -0.2 0 0.1
+  size 0.2 0.2 0.2
+  mass 50
+}
+WoodenBox {
+  translation 0 0 0.1
+  rotation -0.7069098359709003 0.7070908102257447 -0.017351365995066464 1.7138411345214732e-06
+  name "wooden box(1)"
+  size 0.2 0.2 0.2
+  mass 50
+}
+WoodenBox {
+  translation 0.2 -0.2 0.1
+  rotation -0.0105266821307933 0.09313221998966892 -0.9955981009238182 1.2011620496221872e-08
+  name "wooden box(2)"
+  size 0.2 0.2 0.2
+  mass 50
+}
+BeerBottle {
+  translation 0 -0.2 0
+}
+Cat {
+  translation 0 0.2 0
+  rotation 0 0 1 3.1331853071795863
+}

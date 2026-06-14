@@ -1,0 +1,314 @@
+#VRML_SIM R2025a utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/drinks/protos/BeerBottle.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2025a/projects/objects/animals/protos/Cat.proto"
+
+WorldInfo {
+}
+Viewpoint {
+  orientation -0.5205749460186923 0.45362474115109847 0.7233438461708472 1.904693022003171
+  position -0.09537570738661391 -1.1878445841013647 3.005610983206983
+}
+E-puck {
+  hidden position_0_0 3.095604975481409e-08
+  hidden position_0_1 3.09560747229548e-08
+  hidden rotation_1 0 1 0 2.9802322387695313e-08
+  hidden rotation_2 0 1 0 2.9802322387695313e-08
+  translation -0.44999999990322637 -0.44999999998218354 -6.391454876152579e-05
+  rotation 0.9998611873387256 -0.016661514129692287 7.072222782436755e-07 1.1908991351684319e-07
+  controller "my_baba_controller"
+  controllerArgs [
+    ""
+  ]
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  floorTileSize 0.2 0.2
+}
+BeerBottle {
+  translation 0.2 0.24 0.0003427019934575115
+  rotation 0.7627722938229832 0.6455497004493874 0.03800015823296949 5.558220693770131e-17
+}
+Cat {
+  translation -0.277894 0.452342 0
+  rotation 0 0 1 3.1331853071795863
+}
+Solid {
+  translation -0.35 0.15 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.3 0.09 0.1
+      }
+    }
+  ]
+  name "solid(18)"
+  boundingObject Box {
+    size 0.3 0.09 0.1
+  }
+}
+Solid {
+  translation -0.05 0.3 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.09 0.19 0.1
+      }
+    }
+  ]
+  name "solid(20)"
+  boundingObject Box {
+    size 0.05 0.1 0.1
+  }
+}
+Solid {
+  translation -0.05 -0.05 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(28)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation 0.15 -0.05 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.09 0.29 0.1
+      }
+    }
+  ]
+  name "solid(8)"
+  boundingObject Box {
+    size 0.05 0.2 0.1
+  }
+}
+Solid {
+  translation 0.1 -0.35 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.19 0.09 0.1
+      }
+    }
+  ]
+  name "solid(7)"
+  boundingObject Box {
+    size 0.1 0.05 0.1
+  }
+}
+Solid {
+  translation 0.35 -0.35 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(10)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation 0.35 -0.25 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(25)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation 0.35 -0.15 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(26)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation 0.45 -0.15 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(27)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation -0.25 -0.35 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.09 0.295 0.1
+      }
+    }
+  ]
+  name "solid(2)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation -0.16 -0.25 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.09 0.1
+      }
+    }
+  ]
+  name "solid(4)"
+  boundingObject Box {
+    size 0.05 0.05 0.1
+  }
+}
+Solid {
+  translation 0.35 0.1 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.09 0.2 0.1
+      }
+    }
+  ]
+  name "solid(12)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation -0.15 -0.05 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(13)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation -0.25 -0.05 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.1 0.1
+      }
+    }
+  ]
+  name "solid(34)"
+  boundingObject Box {
+    size 0.1 0.1 0.1
+  }
+}
+Solid {
+  translation 0.09 0.35 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.19 0.09 0.1
+      }
+    }
+  ]
+  name "solid(33)"
+  boundingObject Box {
+    size 0.1 0.05 0.1
+  }
+}
+Solid {
+  translation 0.45 0.35 0.05
+  children [
+    Shape {
+      appearance PBRAppearance {
+        baseColor 0.666667 1 0
+      }
+      geometry Box {
+        size 0.1 0.09 0.1
+      }
+    }
+  ]
+  name "solid(23)"
+  boundingObject Box {
+    size 0.05 0.05 0.1
+  }
+}

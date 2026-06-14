@@ -17,7 +17,6 @@ DATA_DIR = os.path.join(PROJECT_ROOT, "data")
 MAPS_JSON_PATH = os.path.join(DATA_DIR, "maps", "maps.json")
 CSV_PATH = os.path.join(DATA_DIR, "registro_navegacion.csv")
 
-
 # =============================================================================
 # PARÁMETROS
 # =============================================================================
@@ -32,7 +31,6 @@ ENTER_DISTANCE = 0.005
 TOLERANCIA_ANGULAR = math.radians(1.0)
 TOLERANCIA_NODO_RECTA = 0.001
 TOLERANCIA_NODO_GIRO = 0.002
-
 
 # =============================================================================
 # CONFIGURACIÓN DEL MAPA
@@ -66,7 +64,6 @@ MAPA_GRILLA, INICIO, META, THETA_INICIAL, TAMANO_CELDA, MAP_CENTER_M = cargar_ma
 CELDAS_Y = len(MAPA_GRILLA)
 CELDAS_X = len(MAPA_GRILLA[0])
 
-
 # =============================================================================
 # CONVERSIÓN DE COORDENADAS
 # =============================================================================
@@ -82,7 +79,6 @@ def nodo_a_coordenadas(nodo):
     y = centro_y + alto_mapa / 2.0 - (fila + 0.5) * TAMANO_CELDA
 
     return x, y
-
 
 def es_giro(ruta, indice):
     """Indica si el nodo de la ruta corresponde a un cambio de dirección."""
@@ -105,7 +101,6 @@ def es_giro(ruta, indice):
 
     return direccion_entrada != direccion_salida
 
-
 # =============================================================================
 # ALGORITMO A*
 # =============================================================================
@@ -113,7 +108,6 @@ def es_giro(ruta, indice):
 def manhattan(a, b):
     """Calcula la distancia Manhattan entre dos nodos."""
     return abs(a[0] - b[0]) + abs(a[1] - b[1])
-
 
 def calcular_ruta_astar(mapa, inicio, meta):
     """Calcula una ruta de celdas libres desde inicio hasta meta mediante A*."""
@@ -186,7 +180,6 @@ def calcular_ruta_astar(mapa, inicio, meta):
 
     return []
 
-
 # =============================================================================
 # FUNCIONES AUXILIARES
 # =============================================================================
@@ -214,12 +207,10 @@ def imprimir_mapa(mapa, inicio, meta, ruta=None):
 
         print(linea)
 
-
 def proximity_to_distance(raw_value):
     """Convierte aproximadamente el valor del sensor infrarrojo a metros."""
     distancia = 0.20 / (1.0 + raw_value / 80.0)
     return max(0.0, min(distancia, 0.20))
-
 
 # =============================================================================
 # CONFIGURACIÓN DEL ROBOT
@@ -251,7 +242,6 @@ distance_sensors = {
 for sensor in distance_sensors.values():
     sensor.enable(timestep)
 
-
 # =============================================================================
 # ARCHIVO CSV
 # =============================================================================
@@ -266,7 +256,6 @@ csv_file = open(
 )
 
 writer = csv.writer(csv_file)
-
 writer.writerow([
     "time",
     "x_odom",
@@ -277,7 +266,6 @@ writer.writerow([
 ])
 
 atexit.register(csv_file.close)
-
 
 # =============================================================================
 # VARIABLES DE NAVEGACIÓN
@@ -300,15 +288,11 @@ ruta_calculada = calcular_ruta_astar(
     META,
 )
 
-if not ruta_calculada:
-    raise RuntimeError(
-        f"No se encontró una ruta entre {INICIO} y {META}."
-    )
+if not ruta_calculada: raise RuntimeError(f"No se encontró una ruta entre {INICIO} y {META}.")
 
 indice_ruta = 1
 modo_navegacion = "SEGUIR_RUTA"
 rotacion_acumulada = 0.0
-
 
 # =============================================================================
 # INFORMACIÓN INICIAL
@@ -317,15 +301,8 @@ rotacion_acumulada = 0.0
 print("Inicio:", INICIO, nodo_a_coordenadas(INICIO))
 print("Meta:", META, nodo_a_coordenadas(META))
 
-imprimir_mapa(
-    MAPA_GRILLA,
-    INICIO,
-    META,
-    ruta_calculada,
-)
-
+imprimir_mapa(MAPA_GRILLA, INICIO, META, ruta_calculada)
 print("Ruta:", ruta_calculada)
-
 
 # =============================================================================
 # BUCLE PRINCIPAL
@@ -370,8 +347,7 @@ while robot.step(timestep) != -1:
 
     z_sensor = proximity_to_distance(front_max)
 
-    if kalman_estimate is None:
-        kalman_estimate = z_sensor
+    if kalman_estimate is None: kalman_estimate = z_sensor
 
     x_pred = kalman_estimate - delta_s
     P_pred = P + Q

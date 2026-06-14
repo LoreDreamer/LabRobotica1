@@ -3,9 +3,7 @@ import json
 import csv
 import atexit
 import math
-
 from controller import Robot
-
 
 # =============================================================================
 # RUTAS DEL PROYECTO

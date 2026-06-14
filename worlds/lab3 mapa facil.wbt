@@ -16,7 +16,7 @@ Viewpoint {
 }
 E-puck {
   translation -0.45 -0.45 0
-  controller "my_fefe_controller"
+  controller "my_controller"
   controllerArgs [
     ""
   ]
